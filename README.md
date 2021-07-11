@@ -22,10 +22,11 @@ The project consists of building a classifier that determines the canine's breed
   * If the image contains neither a dog nor human, it returns an error.
 
 The following images show examples of the resulting algorithm:
-<img src="images/german-shepherd.png" alt="drawing" width="100"/>
-<img src="images/bullmastiff.png" alt="drawing" width="100"/>
-<img src="images/human-dog.png" alt="drawing" width="100"/>
-<img src="images/mongrel.png" alt="drawing" width="100"/>
+
+<img src="images/german-shepherd.png" alt="drawing" width="250"/>
+<img src="images/bullmastiff.png" alt="drawing" width="250"/>
+<img src="images/human-dog.png" alt="drawing" width="250"/>
+<img src="images/mongrel.png" alt="drawing" width="250"/>
 
 
 ## Notes

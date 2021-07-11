@@ -23,10 +23,8 @@ The project consists of building a classifier that determines the canine's breed
 
 The following images show examples of the resulting algorithm:
 
-<img src="images/german-shepherd.png" alt="drawing" width="250"/>
-<img src="images/bullmastiff.png" alt="drawing" width="250"/>
-<img src="images/human-dog.png" alt="drawing" width="250"/>
-<img src="images/mongrel.png" alt="drawing" width="250"/>
+<img src="images/german-shepherd.png" alt="drawing" height="250"/> <img src="images/bullmastiff.png" alt="drawing" height="250"/>
+<img src="images/human-dog.png" alt="drawing" height="250"/> <img src="images/mongrel.png" alt="drawing" height="250"/>
 
 
 ## Notes

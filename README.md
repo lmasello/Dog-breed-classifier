@@ -31,7 +31,7 @@ The following images show examples of the resulting algorithm:
 This project contains my implementation of the "Dog breed classifier" project for the Udacity's [Deep Learning program](https://www.udacity.com/course/deep-learning-nanodegree--nd101). The baseline code has been taken from the [Udacity's Deep Learning repository](https://github.com/udacity/deep-learning-v2-pytorch).
 
 ## Project implementation
-The detailed project implementation can be found in the [report file](./report.html) or in the [project notebook](./dog_app.ipynb). It has been done following the Udacity's list of [rubric points](https://review.udacity.com/#!/rubrics/2259/view) required to pass the project.
+The project implementation complies with Udacity's list of [rubric points](https://review.udacity.com/#!/rubrics/2259/view) required to pass the project and can be found in the [report](./report.html) or [project notebook](./dog_app.ipynb).
 
 ---
 ## Project Instructions

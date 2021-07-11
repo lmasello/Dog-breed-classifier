@@ -1,25 +1,41 @@
+# CNN Dog Breed Classifier Project
+[![Udacity - Deep Learning NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](https://www.udacity.com/course/deep-learning-nanodegree--nd101)
+
 [//]: # (Image References)
 
 [image1]: ./images/sample_dog_output.png "Sample Output"
 [image2]: ./images/vgg16_model.png "VGG-16 Model Layers"
 [image3]: ./images/vgg16_model_draw.png "VGG16 Model Figure"
+[german-shepherd]: /images/german-shepherd.png
+[bullmastiff]: /images/bullmastiff.png
+[human-dog]: /images/human-dog.png
+[mongrel]: /images/mongrel.png
 
-## Summary
-This project contains my implementation of the "Dog breed classifier" project for the Udacity's [Deep Learning program](https://www.udacity.com/course/deep-learning-nanodegree--nd101). You can find the project implementation in the [report](./report.html) or in the [project notebook](./dog_app.ipynb). The following sections contain the original README with the project overview and instructions.
+The project consists of building a classifier that determines the canine's breed given an image of a dog. If the input image corresponds to a human, the model yields the resembling dog breed. The project is composed of the following steps:
+* Detect human faces using OpenCV's implementation of [Haar feature-based cascade classifiers](https://docs.opencv.org/master/db/d28/tutorial_cascade_classifier.html). 
+* Detect dogs using a [VGG-16 model](https://pytorch.org/vision/stable/models.html#id2) pre-trained on the [ImageNet](https://image-net.org/) dataset.
+* Create a CNN to classify dog breeds (from scratch)
+* Create a CNN to classify dog breeds (using transfer learning)
+* Combine the human and dog detectors to provide estimates of canine breeds of input images:
+  * If the image contains a dog, it returns the predicted breed.
+  * If the image contains a human face, it returns the resembling dog breed.
+  * If the image contains neither a dog nor human, it returns an error.
+
+The following images show examples of the resulting algorithm:
+![german-shepherd][german-shepherd]
+![bullmastiff][bullmastiff]
+![human-dog][human-dog]
+![mongrel][mongrel]
+
+
+## Notes
+This project contains my implementation of the "Dog breed classifier" project for the Udacity's [Deep Learning program](https://www.udacity.com/course/deep-learning-nanodegree--nd101). The baseline code has been taken from the [Udacity's Deep Learning repository](https://github.com/udacity/deep-learning-v2-pytorch).
+
+## Project implementation
+The detailed project implementation can be found in the [report file](./report.html) or in the [project notebook](./dog_app.ipynb). It has been done following the Udacity's list of [rubric points](https://review.udacity.com/#!/rubrics/2259/view) required to pass the project.
 
 ---
-## Project Overview
-
-Welcome to the Convolutional Neural Networks (CNN) project in the AI Nanodegree! In this project, you will learn how to build a pipeline that can be used within a web or mobile app to process real-world, user-supplied images.  Given an image of a dog, your algorithm will identify an estimate of the canine’s breed.  If supplied an image of a human, the code will identify the resembling dog breed.  
-
-![Sample Output][image1]
-
-Along with exploring state-of-the-art CNN models for classification and localization, you will make important design decisions about the user experience for your app.  Our goal is that by completing this lab, you understand the challenges involved in piecing together a series of models designed to perform various tasks in a data processing pipeline.  Each model has its strengths and weaknesses, and engineering a real-world application often involves solving many problems without a perfect answer.  Your imperfect solution will nonetheless create a fun user experience!
-
 ## Project Instructions
-
-### Instructions
-
 1. Clone the repository and navigate to the downloaded folder.
 
 	```
@@ -42,29 +58,6 @@ __NOTE:__ While some code has already been implemented to get you started, you w
 
 __NOTE:__ In the notebook, you will need to train CNNs in PyTorch.  If your CNN is taking too long to train, feel free to pursue one of the options under the section __Accelerating the Training Process__ below.
 
+### (Optionally) Accelerating the Training Process
 
-
-## (Optionally) Accelerating the Training Process
-
-If your code is taking too long to run, you will need to either reduce the complexity of your chosen CNN architecture or switch to running your code on a GPU.  If you'd like to use a GPU, you can spin up an instance of your own:
-
-#### Amazon Web Services
-
-You can use Amazon Web Services to launch an EC2 GPU instance. (This costs money, but enrolled students should see a coupon code in their student `resources`.)
-
-## Evaluation
-
-Your project will be reviewed by a Udacity reviewer against the CNN project rubric.  Review this rubric thoroughly and self-evaluate your project before submission.  All criteria found in the rubric must meet specifications for you to pass.
-
-
-## Project Submission
-
-Your submission should consist of the github link to your repository.  Your repository should contain:
-- The `dog_app.ipynb` file with fully functional code, all code cells executed and displaying output, and all questions answered.
-- An HTML or PDF export of the project notebook with the name `report.html` or `report.pdf`.
-
-Please do __NOT__ include any of the project data sets provided in the `dogImages/` or `lfw/` folders.
-
-### Ready to submit your project?
-
-Click on the "Submit Project" button in the classroom and follow the instructions to submit!
+If your code is taking too long to run, you will need to either reduce the complexity of your chosen CNN architecture or switch to running your code on a GPU.  If you'd like to use a GPU, you can spin up an instance of your own.

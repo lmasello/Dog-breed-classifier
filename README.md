@@ -1,5 +1,6 @@
 # CNN Dog Breed Classifier Project
 [![Udacity - Deep Learning NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](https://www.udacity.com/course/deep-learning-nanodegree--nd101)
+[![Udacity - Data Scientist NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](https://www.udacity.com/course/data-scientist-nanodegree--nd025)
 
 [//]: # (Image References)
 
@@ -27,36 +28,38 @@ The following images show examples of the resulting algorithm:
 <img src="images/human-dog.png" alt="drawing" height="250"/> <img src="images/mongrel.png" alt="drawing" height="250"/>
 
 
-## Notes
-This project contains my implementation of the "Dog breed classifier" project for the Udacity's [Deep Learning program](https://www.udacity.com/course/deep-learning-nanodegree--nd101). The baseline code has been taken from the [Udacity's Deep Learning repository](https://github.com/udacity/deep-learning-v2-pytorch).
+## Model performance
+The Dog Breed classifier achieved a test accuracy of 84% (704/836).
 
-## Project implementation
-The project implementation complies with Udacity's list of [rubric points](https://review.udacity.com/#!/rubrics/2259/view) required to pass the project and can be found in the [report](./report.html) or [project notebook](./dog_app.ipynb).
 
----
-## Project Instructions
+## Project structure
+- [dog_app.ipynb](./dog_app.ipynb):
+- [dog_breed_classifier.py](./dog_breed_classifier.py):
+- [web_app](./web_app.py):
+
+## How to run the web application
+
+
+## How to run the notebook
 1. Clone the repository and navigate to the downloaded folder.
 
 	```
-		git clone https://github.com/udacity/deep-learning-v2-pytorch.git
-		cd deep-learning-v2-pytorch/project-dog-classification
+		git clone https://github.com/lmasello/Dog-breed-classifier.git
+		cd Dog-breed-classifier
 	```
 
 __NOTE:__ if you are using the Udacity workspace, you *DO NOT* need to re-download the datasets in steps 2 and 3 - they can be found in the `/data` folder as noted within the workspace Jupyter notebook.
 
 2. Download the [dog dataset](https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/dogImages.zip).  Unzip the folder and place it in the repo, at location `path/to/dog-project/dogImages`.  The `dogImages/` folder should contain 133 folders, each corresponding to a different dog breed.
 3. Download the [human dataset](http://vis-www.cs.umass.edu/lfw/lfw.tgz).  Unzip the folder and place it in the repo, at location `path/to/dog-project/lfw`.  If you are using a Windows machine, you are encouraged to use [7zip](http://www.7-zip.org/) to extract the folder.
-4. Make sure you have already installed the necessary Python packages according to the README in the program repository.
-5. Open a terminal window and navigate to the project folder. Open the notebook and follow the instructions.
+4. Make sure you have already installed the necessary Python packages according to the [requirements.txt](./requirements.txt) file.
+5. Open a terminal window and navigate to the project folder, and open the notebook.
 
 	```
 		jupyter notebook dog_app.ipynb
 	```
 
-__NOTE:__ While some code has already been implemented to get you started, you will need to implement additional functionality to successfully answer all of the questions included in the notebook. __Unless requested, do not modify code that has already been included.__
+__NOTE:__ In the notebook, you will need to train CNNs in PyTorch. If your code is taking too long to run, you will need to either reduce the complexity of your chosen CNN architecture or switch to running your code on a GPU.  If you'd like to use a GPU, you can spin up an instance of your own.
 
-__NOTE:__ In the notebook, you will need to train CNNs in PyTorch.  If your CNN is taking too long to train, feel free to pursue one of the options under the section __Accelerating the Training Process__ below.
-
-### (Optionally) Accelerating the Training Process
-
-If your code is taking too long to run, you will need to either reduce the complexity of your chosen CNN architecture or switch to running your code on a GPU.  If you'd like to use a GPU, you can spin up an instance of your own.
+## Acknowledgements
+This project contains my implementation of the "Dog breed classifier" project for the Udacity's [Deep Learning program](https://www.udacity.com/course/deep-learning-nanodegree--nd101) and [Data Scientist program](https://www.udacity.com/course/data-scientist-nanodegree--nd025). The baseline code and datasets have been taken from the [Udacity's Deep Learning repository](https://github.com/udacity/deep-learning-v2-pytorch).

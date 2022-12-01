@@ -43,8 +43,8 @@ def VGG16_predict(img, use_cuda=False):
     return pred[0]
 
 
-### returns "True" if a dog is detected in the image
 def dog_detector(img, predictor, use_cuda=False):
+    """Determine whether a dog is detected in the image stored at img_path or not"""
     first_dog_index = 151
     last_dog_index = 268
     predicted = predictor(img)
@@ -53,9 +53,8 @@ def dog_detector(img, predictor, use_cuda=False):
     return first_dog_index <= predicted.numpy() <= last_dog_index
 
 
-# returns "True" if face is detected in image
 def face_detector(img):
-    # extract pre-trained face detector
+    """Return whether the image stored at img_path has a human face or not"""
     face_cascade = cv2.CascadeClassifier('haarcascades/haarcascade_frontalface_alt.xml')    
     gray = cv2.cvtColor(np.array(img), cv2.COLOR_BGR2GRAY)
     faces = face_cascade.detectMultiScale(gray)
@@ -63,6 +62,7 @@ def face_detector(img):
 
 
 def predict_breed_transfer(img, model, class_names):
+    """Determine if the image stored at img_path contains a human or a dog and return the dog breed"""
     transform = transforms.Compose([
         transforms.Resize(256),
         transforms.CenterCrop(224),

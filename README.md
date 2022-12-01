@@ -1,7 +1,4 @@
 # CNN Dog Breed Classifier Project
-[![Udacity - Deep Learning NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](https://www.udacity.com/course/deep-learning-nanodegree--nd101)
-[![Udacity - Data Scientist NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](https://www.udacity.com/course/data-scientist-nanodegree--nd025)
-
 [//]: # (Image References)
 
 [image1]: ./images/sample_dog_output.png "Sample Output"
@@ -33,14 +30,12 @@ The Dog Breed classifier achieved a test accuracy of 84% (704/836).
 
 
 ## Project structure
-- [dog_app.ipynb](./dog_app.ipynb):
-- [dog_breed_classifier.py](./dog_breed_classifier.py):
-- [web_app](./web_app.py):
-
-## How to run the web application
+- [dog_app.ipynb](./dog_app.ipynb): This file contains the main project notebook with the whole processing pipeline. The notebook trains a classifier and saves the model into a `model_transfer.pt` file.
+- [dog_breed_classifier.py](./dog_breed_classifier.py): A Python file contains the main functions to run the model's prediction on the web app.
+- [web_app](./web_app.py): A streamlit file with the web application code to get a input image and return the model's prediction.
 
 
-## How to run the notebook
+## How to run the dog_app notebook and get a dog breed classifier model
 1. Clone the repository and navigate to the downloaded folder.
 
 	```
@@ -59,7 +54,15 @@ __NOTE:__ if you are using the Udacity workspace, you *DO NOT* need to re-downlo
 		jupyter notebook dog_app.ipynb
 	```
 
-__NOTE:__ In the notebook, you will need to train CNNs in PyTorch. If your code is taking too long to run, you will need to either reduce the complexity of your chosen CNN architecture or switch to running your code on a GPU.  If you'd like to use a GPU, you can spin up an instance of your own.
+__NOTE:__ In the notebook, you will need to train CNNs in PyTorch. If your code is taking too long to run, you will need to either reduce the complexity of your chosen CNN architecture or switch to running your code on a GPU. 
+
+## How to run the web application
+1. Run the [dog_app.ipynb](./dog_app.ipynb) notebook and save the resulting model into a `model_transfer.pt` file at the root directory
+2. Make sure you have already installed the necessary Python packages according to the [requirements.txt](./requirements.txt) file.
+3. Run the streamlit application and navigate on the web browser: `streamlit run web_app.py`
+
+## Model architecture
+The model uses Transfer Learning based on the [VGG16](https://pytorch.org/vision/stable/models/vgg.html) architecture due to its reported performance. It only performs one modification on the last Linear layer to adapt the number of output features to the Dog Breed classifier case.
 
 ## Acknowledgements
 This project contains my implementation of the "Dog breed classifier" project for the Udacity's [Deep Learning program](https://www.udacity.com/course/deep-learning-nanodegree--nd101) and [Data Scientist program](https://www.udacity.com/course/data-scientist-nanodegree--nd025). The baseline code and datasets have been taken from the [Udacity's Deep Learning repository](https://github.com/udacity/deep-learning-v2-pytorch).

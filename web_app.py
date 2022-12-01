@@ -8,6 +8,7 @@ from PIL import Image
 
 
 def show_prediction(pic, model, class_names):
+    """Show the model's prediction of a given picture"""
     image = Image.open(pic).convert('RGB')
     pred = predict_breed_transfer(image, model, class_names)
     if dog_detector(image, VGG16_predict) and not pred.startswith("Error"):

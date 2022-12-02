@@ -26,7 +26,7 @@ The following images show examples of the resulting algorithm:
 
 
 ## Model performance
-The Dog Breed classifier achieved a test accuracy of 84% (704/836).
+The Dog Breed classifier achieved a test accuracy of 84% (705/836).
 
 
 ## Project structure
@@ -53,13 +53,18 @@ __NOTE:__ if you are using the Udacity workspace, you *DO NOT* need to re-downlo
 	```
 		jupyter notebook dog_app.ipynb
 	```
+6. If you just want to get a model, you can skip the notebook's Step 3: Create a CNN to Classify Dog Breeds (from Scratch) and, instead, execute Step 4: Create a CNN to Classify Dog Breeds (using Transfer Learning).
 
 __NOTE:__ In the notebook, you will need to train CNNs in PyTorch. If your code is taking too long to run, you will need to either reduce the complexity of your chosen CNN architecture or switch to running your code on a GPU. 
 
 ## How to run the web application
-1. Run the [dog_app.ipynb](./dog_app.ipynb) notebook and save the resulting model into a `model_transfer.pt` file at the root directory
+1. Run the [dog_app.ipynb](./dog_app.ipynb) notebook and save the resulting model into a `model_transfer.pt` file at the root of the project.
 2. Make sure you have already installed the necessary Python packages according to the [requirements.txt](./requirements.txt) file.
-3. Run the streamlit application and navigate on the web browser: `streamlit run web_app.py`
+3. Open a terminal window and run the streamlit application: 
+```bash
+cd Dog-breed-classifier
+streamlit run web_app.py
+```
 
 ## Model architecture
 The model uses Transfer Learning based on the [VGG16](https://pytorch.org/vision/stable/models/vgg.html) architecture due to its reported performance. It only performs one modification on the last Linear layer to adapt the number of output features to the Dog Breed classifier case.
